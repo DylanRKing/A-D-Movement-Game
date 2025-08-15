@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField]
+    private string sceneToLoad = "GameScene"; // The name of the scene to load when starting the game
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,11 +17,12 @@ public class MainMenuManager : MonoBehaviour
         
     }
 
-    void StartGame()
+    public void StartGame()
     {
         // Logic to start the game
         Debug.Log("Starting Game...");
         // Load the game scene or perform any necessary setup
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad); // Replace "GameScene" with your actual game scene name
     }
 
     public void ExitGame()
